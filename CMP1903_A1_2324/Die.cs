@@ -14,9 +14,15 @@ namespace CMP1903_A1_2324
          */
 
         //Property
-
-
+        public int CurrentValue = 0;
+        
         //Method
+        public int Roll()
+        {
+            var roller = new Random();
+            CurrentValue = roller.Next(1, 7);
+            return CurrentValue;
+        }
 
 
     }
