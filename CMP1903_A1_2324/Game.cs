@@ -17,5 +17,20 @@ namespace CMP1903_A1_2324
 
         //Methods
 
+        public int Result { get; set; } = 0;
+
+        public Game()
+        { 
+            Die dieOne = new Die();
+            Die dieTwo = new Die();
+            Die dieThree = new Die();
+
+            int rollOne = dieOne.Roll();
+            int rollTwo = dieTwo.Roll();
+            int rollThree = dieThree.Roll();
+
+            Result = rollOne + rollTwo + rollThree;
+        }
     }
 }
+
