@@ -37,6 +37,45 @@ namespace CMP1903_A1_2324
 
             return result;
         }
+
+        public int ExtraRolls()
+        {
+            int result = 0;
+            Die dieToRoll = new Die();
+            int numberOfRolls = 0;
+
+            while (true)
+            { 
+                Console.WriteLine("\nNumber of Rolls to execute: ");
+                
+                try
+                {
+                    numberOfRolls = Int32.Parse(Console.ReadLine());
+
+                    if (numberOfRolls < 1)
+                    {
+                        throw new Exception("Number of rolls out of bounds.");
+                    }
+
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("This is an invalid input value. Please try again.");
+                }
+            }
+            
+            for (int i = 0; i < numberOfRolls; i++)
+            {
+                int rollResult = dieToRoll.Roll();
+                Console.WriteLine($"Roll Result: {rollResult}");
+                result += rollResult;
+            }
+            
+            Console.WriteLine($"Final Result: {result}");
+            
+            return result;
+        }
     }
 }
 
