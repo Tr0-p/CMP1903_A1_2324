@@ -17,19 +17,25 @@ namespace CMP1903_A1_2324
 
         //Methods
 
-        public int Result { get; set; } = 0;
-        
-        private static Die _dieOne = new Die();
-        private static Die _dieTwo = new Die();
-        private static Die _dieThree = new Die();
-
-        public int rollOne = _dieOne.Roll();
-        public int rollTwo = _dieTwo.Roll();
-        public int rollThree = _dieThree.Roll();
-        
-        public Game()
+        public int StartRoll()
         {
-            Result = rollOne + rollTwo + rollThree;
+            int result = 0;
+            
+            Die dieOne = new Die();
+            Die dieTwo = new Die();
+            Die dieThree = new Die();
+
+            int rollOne = dieOne.Roll();
+            int rollTwo = dieTwo.Roll();
+            int rollThree = dieThree.Roll();
+            
+            result = rollOne + rollTwo + rollThree;
+            Console.WriteLine($"\nDice 1: {rollOne}");
+            Console.WriteLine($"Dice 2: {rollTwo}");
+            Console.WriteLine($"Dice 3: {rollThree}");
+            Console.WriteLine($"Sum: {result}");
+
+            return result;
         }
     }
 }
