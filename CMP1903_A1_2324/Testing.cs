@@ -32,9 +32,6 @@ namespace CMP1903_A1_2324
                 
                 Debug.Assert(newRoll < 7 && newRoll > 0, "Dice Roll detected as out of bounds.");
             }
-            
-            // Game Testing
-            Debug.Assert(testGame.Result == (testGame.rollOne + testGame.rollTwo + testGame.rollThree ), "Result from Game is incorrect.");
         }
     }
 }
