@@ -18,7 +18,7 @@ namespace CMP1903_A1_2324
 
         //Method
 
-        public Testing()
+        public void RunTest()
         {
             Game testGame = new Game();
             Die testDie = new Die();
@@ -32,6 +32,17 @@ namespace CMP1903_A1_2324
                 
                 Debug.Assert(newRoll < 7 && newRoll > 0, "Dice Roll detected as out of bounds.");
             }
+            
+            // Game Testing
+            var gameResults = testGame.StartRoll();
+            int sumOfDie = gameResults.Item1.CurrentValue + gameResults.Item2.CurrentValue +
+                           gameResults.Item3.CurrentValue;
+            
+            // Check for general addition errors.
+            Debug.Assert(sumOfDie == gameResults.Item4, "Error in the addition of Die Values ");
+            
+            // Check the boundaries of the sum (3 being the minimum, 18 being the maximum)
+            Debug.Assert(sumOfDie <= 18 && sumOfDie >= 3, "Sum is out of bounds.");
         }
     }
 }

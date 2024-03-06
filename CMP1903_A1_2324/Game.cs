@@ -17,7 +17,7 @@ namespace CMP1903_A1_2324
 
         //Methods
 
-        public int StartRoll()
+        public (Die, Die, Die, int) StartRoll()
         {
             int result = 0;
             
@@ -35,7 +35,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine($"Dice 3: {rollThree}");
             Console.WriteLine($"Sum: {result}");
 
-            return result;
+            return (dieOne, dieTwo, dieThree, result);
         }
 
         public int ExtraRolls()
@@ -65,11 +65,14 @@ namespace CMP1903_A1_2324
                 }
             }
             
+            Console.WriteLine("\nPress enter to continue to next Die value!"); 
+            
             for (int i = 0; i < numberOfRolls; i++)
             {
                 int rollResult = dieToRoll.Roll();
                 Console.WriteLine($"Roll Result: {rollResult}");
                 result += rollResult;
+                Console.ReadKey();
             }
             
             Console.WriteLine($"Final Result: {result}");
