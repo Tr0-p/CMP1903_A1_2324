@@ -14,8 +14,8 @@ namespace CMP1903_A1_2324
          */
 
         //Property
-        public int CurrentValue = 0;
-        
+        public int CurrentValue { get; set; } = 0;
+
         //Method
         public int Roll()
         {
