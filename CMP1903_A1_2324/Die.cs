@@ -16,12 +16,13 @@ namespace CMP1903_A1_2324
         //Property
 
         public int CurrentValue { get; private set; }
-        private static Random roller = new Random();
+        private static Random _roller = new Random();
         
         //Method
+        
         public int Roll()
         {
-            CurrentValue = roller.Next(1, 7);
+            CurrentValue = _roller.Next(1, 7);
             return CurrentValue;
         }
 

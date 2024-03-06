@@ -30,7 +30,8 @@ namespace CMP1903_A1_2324
             {
                 int newRoll = testDie.Roll();
                 
-                Debug.Assert(newRoll < 7 && newRoll > 0, "Dice Roll detected as out of bounds.");
+                Debug.Assert(newRoll < 7, "Dice Roll too high.");
+                Debug.Assert(newRoll >= 1, "Dice Roll too low.");
             }
             
             // Game Testing

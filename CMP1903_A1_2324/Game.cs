@@ -59,7 +59,7 @@ namespace CMP1903_A1_2324
 
                     break;
                 }
-                catch (Exception e)
+                catch (FormatException e)
                 {
                     Console.WriteLine("This is an invalid input value. Please try again.");
                 }
@@ -76,6 +76,7 @@ namespace CMP1903_A1_2324
             }
             
             Console.WriteLine($"Final Result: {result}");
+            Console.ReadKey();
             
             return result;
         }
