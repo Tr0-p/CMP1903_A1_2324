@@ -8,13 +8,42 @@ namespace CMP1903_A1_2324
 {
     internal class Program
     {
+        
+        /// <summary>
+        /// Entry point for the program to enable the Testing Class and run the main game. 
+        /// </summary>
+        /// <param name="args">No Arguments Accepted</param>
+        
         static void Main(string[] args)
         {
             /*
              * Create a Game object and call its methods.
              * Create a Testing object to verify the output and operation of the other classes.
-             * Git Test
              */
+
+            bool testingMode = true;
+            Game activeGame = new Game();
+            Testing activeTester = new Testing();
+
+            if (testingMode)
+            {
+                activeTester.RunTest();
+            }
+            
+            // Blank line for output aesthetic.
+            Console.WriteLine();
+            
+            // Enable the starter game.
+            activeGame.StartRoll();
+            
+            // Check for next step.
+            Console.WriteLine("Would you like to roll more times? (Y/N): ");
+            string answer = Console.ReadLine().ToLower();
+
+            if (answer == "y")
+            {
+                activeGame.ExtraRolls();
+            }
         }
     }
 }
