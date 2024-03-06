@@ -18,16 +18,21 @@ namespace CMP1903_A1_2324
 
         //Method
 
+        /// <summary>
+        /// Run the testing criterion and test each class.
+        /// </summary>
         public void RunTest()
         {
+            // Create instances of the Game Class and Die Class
             Game testGame = new Game();
             Die testDie = new Die();
             
             // Die Testing
-            int testCases = 50;
+            int testCases = 50; // Define how many test cases to do.
 
             for (int i = 0; i < testCases; i++)
             {
+                // Create a new dice each time and ensure the rolls are in range.
                 int newRoll = testDie.Roll();
                 
                 Debug.Assert(newRoll < 7, "Dice Roll too high.");
@@ -35,6 +40,7 @@ namespace CMP1903_A1_2324
             }
             
             // Game Testing
+            // Create a roll, ensure the addition of the dice matches the result.
             var gameResults = testGame.StartRoll();
             int sumOfDie = gameResults.Item1.CurrentValue + gameResults.Item2.CurrentValue +
                            gameResults.Item3.CurrentValue;

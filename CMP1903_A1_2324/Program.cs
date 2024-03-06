@@ -8,6 +8,12 @@ namespace CMP1903_A1_2324
 {
     internal class Program
     {
+        
+        /// <summary>
+        /// Entry point for the program to enable the Testing Class and run the main game. 
+        /// </summary>
+        /// <param name="args">No Arguments Accepted</param>
+        
         static void Main(string[] args)
         {
             /*
@@ -38,7 +44,6 @@ namespace CMP1903_A1_2324
             {
                 activeGame.ExtraRolls();
             }
-
         }
     }
 }
